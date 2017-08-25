@@ -5,5 +5,5 @@ package com.mishkaowner.simplevisionlib;
  */
 
 public interface BarcodeListener {
-    void onBarcodeFound(String barcode);
+    void onBarcodeFound(String barcode, int barCodeFormat);
 }

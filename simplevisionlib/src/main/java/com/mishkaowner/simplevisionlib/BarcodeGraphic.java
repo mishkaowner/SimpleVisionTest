@@ -104,7 +104,7 @@ public class BarcodeGraphic extends GraphicOverlay.Graphic {
         canvas.drawText(barcode.rawValue, rect.left, rect.bottom, mTextPaint);
 
         if(barcodeListener != null) {
-            barcodeListener.onBarcodeFound(barcode.rawValue);
+            barcodeListener.onBarcodeFound(barcode.rawValue, barcode.format);
         }
     }
 }

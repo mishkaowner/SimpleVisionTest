@@ -65,6 +65,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     public static final String AutoFocus = "AutoFocus";
     public static final String UseFlash = "UseFlash";
     public static final String BarcodeObject = "Barcode";
+    public static final String BarcodeFormat = "BarcodeFormat";
 
     private CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
@@ -262,9 +263,10 @@ public final class BarcodeCaptureActivity extends AppCompatActivity implements B
     }
 
     @Override
-    public void onBarcodeFound(String barcode) {
+    public void onBarcodeFound(String barcode, int barcodeFormat) {
         Intent data = new Intent();
         data.putExtra(BarcodeObject, barcode);
+        data.putExtra(BarcodeFormat, barcodeFormat);
         setResult(CommonStatusCodes.SUCCESS, data);
         finish();
     }
